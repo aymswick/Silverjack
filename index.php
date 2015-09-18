@@ -117,8 +117,8 @@ function drawGame() {
 	global $people;
 
 	$k = 0;
-	echo "<table border = 1>";
-	echo "<tr>";
+	echo "<table border = 1 >";
+	echo "<tr class='top'>";
 	echo "<td>";
 	echo "People";
 	echo "</td>";
@@ -139,7 +139,7 @@ function drawGame() {
 	echo "</tr>";
 	for ($i = 0; $i < 4; $i++)//prints the person, hands up to the zero, winner quote
 	{
-		echo "<tr>";
+		echo "<tr class='rest'>";
 
 		echo "<td>";
 		//echo "People";
@@ -190,22 +190,22 @@ function drawGame() {
 		<title>Lab 3: SilverJack</title>
 
 		<style>
-			@import url(css/styles.css);
+			@import url(styles.css);
 		</style>
 
 	</head>
 
-	<body>
-		<h1> SilverJack</h1>
+	<body >
+		<h1 > SilverJack</h1>
 
-		<div id="wrapper">
+		<div id="wrapper" >
 			<?php
 			doAll();
 			
 			?>
 		</div>
 
-		<footer>
+		<footer >
 			<hr>
 			<br />
 			&copy; Uriel, 2015
