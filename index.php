@@ -27,17 +27,20 @@ function doAll() {
 	}
 	getWinner();
 	//goes through the hands and chooses a winner
-	//drawGame();
+	drawGame();
 	//prints all the hands including the winner
 
 }
 
 function getPlayer($pic) {
 	global $people;
-	echo $pic;
-	echo "<img src= 'Silverjack/faces" . $pic . ".png'/>" ;
 
-	//$people = "<img src= 'Silverjack/faces" . $i++ .".png'/>";//get the image of player
+	//echo "<img src= 'Silverjack/faces/" . $pic . ".png'/>" ;
+
+	$temp = "<img src= 'Silverjack/faces/" . $pic . ".png'/>";
+	//stores image of person to print later
+	array_push($people, $temp);
+
 }
 
 function getHand($player) {
@@ -61,16 +64,18 @@ function getHand($player) {
 		$number = (($lastCard % 13) + 1);
 		//chooses the number of the card
 		$points[$player] += $number;
-		echo "<img src= 'Silverjack/cards/" . $suitArray[floor($lastCard / 13)] . "/" . $number . ".png'/>";
-		//$hands = "<img src= 'Silverjack/cards/" . $suitArray[floor($lastCard / 13)] . "/" . $number . ".png'/>";//adds to the aray
+		//echo "<img src= 'Silverjack/cards/" . $suitArray[floor($lastCard / 13)] . "/" . $number . ".png'/>";
+
+		$temp = "<img src= 'Silverjack/cards/" . $suitArray[floor($lastCard / 13)] . "/" . $number . ".png'/>";
+		array_push($hands, $temp);
+		//adds to the array
 
 	}
-	$hands = "0";
+	array_push($hands, "0");
 	//to know when a new hand starts
 
-	echo $points[$player];
+	//echo $points[$player];
 	//will print later
-	echo "<br/> <br/>";
 
 }
 
@@ -84,26 +89,27 @@ function getWinner() {
 	//change names to appropiate
 	$max = 0;
 	//start with 0
-
+	$index = 0;
 	for ($i = 0; $i < 4; $i++) {
-		if ($points[$i] < 42 && $points[$i] > $max)//gets the highest winning hand;
+		if ($points[$i] <= 42 && $points[$i] > $max)//gets the highest winning hand;
 		{
-			$max = $i;
+			$max = $points[$i];
+			$index = $i;
 		}
 
 	}
 	if ($max != 0)//if theres a winner store name of winner in appropiate index
 	{
 
-		$temp .= $nameArray[$max] . "wins";
-		$winner[$max] = $temp;
+		$temp .= $nameArray[$index] . " Wins!!!";
+		$winner[$index] = $temp;
 	} else {
 		$temp .= "No winner";
 		$winner[3] = $temp;
 	}
 
 }
-/*
+
 function drawGame() {
 	global $points;
 	global $hands;
@@ -111,20 +117,69 @@ function drawGame() {
 	global $people;
 
 	$k = 0;
+	echo "<table border = 1>";
+	echo "<tr>";
+	echo "<td>";
+	echo "People";
+	echo "</td>";
+	for ($i = 0; $i < 6; $i++) {
+
+		echo "<td>";
+		$temp = "Cards " . ($i+1);
+		echo $temp;
+		echo "</td>";
+
+	}
+	echo "<td>";
+	echo "Points";
+	echo "</td>";
+	echo "<td>";
+	echo "winner?";
+	echo "</td>";
+	echo "</tr>";
 	for ($i = 0; $i < 4; $i++)//prints the person, hands up to the zero, winner quote
 	{
+		echo "<tr>";
+
+		echo "<td>";
+		//echo "People";
 		echo $people[$i];
-		while ($hands[$k] != 0) {
-			echo $hands[$k];
-			//prints the hand for that person
-			$k++;
+		echo "</td>";
+
+		for ($j = 0; $j < 6; $j++) {//populates 6 columns with cards or blank space
+
+			while ($hands[$k] != "0") {
+				echo "<td>";
+				echo $hands[$k];
+				echo "</td>";
+				//prints the hand for that person
+				$k++;
+				$j++;
+
+			}
+			if($j < 6)
+			{
+				echo "<td>";
+		
+				echo "</td>";
+			}
+
+			
+
 		}
+
+		$k++;
+		echo "<td>";
+		echo $points[$i];
+		echo "</td>";
+		echo "<td>";
 		echo $winner[$i];
+		echo "</td>";
+		echo "</tr>";
+
 	}
+	echo "</table>";
+
 }
-
- * 
- */
-
 ?>
 
