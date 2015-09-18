@@ -37,7 +37,7 @@ function getPlayer($pic) {
 
 	//echo "<img src= 'Silverjack/faces/" . $pic . ".png'/>" ;
 
-	$temp = "<img src= 'Silverjack/faces/" . $pic . ".png'/>";
+	$temp = "<img src= 'faces/" . $pic . ".png'/>";
 	//stores image of person to print later
 	array_push($people, $temp);
 
@@ -66,7 +66,7 @@ function getHand($player) {
 		$points[$player] += $number;
 		//echo "<img src= 'Silverjack/cards/" . $suitArray[floor($lastCard / 13)] . "/" . $number . ".png'/>";
 
-		$temp = "<img src= 'Silverjack/cards/" . $suitArray[floor($lastCard / 13)] . "/" . $number . ".png'/>";
+		$temp = "<img src= 'cards/" . $suitArray[floor($lastCard / 13)] . "/" . $number . ".png'/>";
 		array_push($hands, $temp);
 		//adds to the array
 
@@ -182,4 +182,38 @@ function drawGame() {
 
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 3: SilverJack</title>
+
+		<style>
+			@import url(css/styles.css);
+		</style>
+
+	</head>
+
+	<body>
+		<h1> SilverJack</h1>
+
+		<div id="wrapper">
+			<?php
+			doAll();
+			
+			?>
+		</div>
+
+		<footer>
+			<hr>
+			<br />
+			&copy; Uriel, 2015
+			<br />
+			<img src="../../../img/csumb-logo.png" alt="California State University Monterey Bay Logo" />
+		</footer>
+
+	</body>
+</html>
+
 
