@@ -23,8 +23,7 @@ function doAll()
 }
 function getPlayer($i)
 {
-	
-	
+	echo "<img src= 'Silverjack/faces"  . $i++ . ".png'/>" ;
 }
 
 
