@@ -160,7 +160,7 @@ function drawGame() {
 			if($j < 6)
 			{
 				echo "<td>";
-		
+				echo "<img src= 'cards/card_back.png'/>" ;
 				echo "</td>";
 			}
 
