@@ -1,7 +1,4 @@
-
-<?php
-
-$deck = array();
+<?php $deck = array();
 
 for ($i = 0; $i < 52; $i++) {
 	$deck[] = $i;
@@ -37,8 +34,11 @@ function getPlayer($pic) {
 	global $people;
 
 	//echo "<img src= 'Silverjack/faces/" . $pic . ".png'/>" ;
-
-	$temp = "<img src= 'faces/" . $pic . ".png'/>";
+	if ($pic == 2) {
+		$temp = "<img id = 'HS' src= 'faces/" . $pic . ".png'/>";
+	} else {
+		$temp = "<img src= 'faces/" . $pic . ".png'/>";
+	}
 	//stores image of person to print later
 	array_push($people, $temp);
 
@@ -126,7 +126,7 @@ function drawGame() {
 	for ($i = 0; $i < 6; $i++) {
 
 		echo "<td id = 'colTitle'>";
-		$temp = "Cards " . ($i+1);
+		$temp = "Cards " . ($i + 1);
 		echo $temp;
 		echo "</td>";
 
@@ -158,14 +158,11 @@ function drawGame() {
 				$j++;
 
 			}
-			if($j < 6)
-			{
+			if ($j < 6) {
 				echo "<td>";
-		
+
 				echo "</td>";
 			}
-
-			
 
 		}
 
@@ -193,8 +190,8 @@ function drawGame() {
 		<style>
 			@import url(css/styles.css);
 		</style>
-		
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+
+		<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
 	</head>
 
@@ -203,7 +200,7 @@ function drawGame() {
 
 		<div id="wrapper">
 			<?php
-				doAll();
+			doAll();
 			?>
 		</div>
 
@@ -217,6 +214,4 @@ function drawGame() {
 
 	</body>
 </html>
-
-
 
