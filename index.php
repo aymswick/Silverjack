@@ -1,3 +1,4 @@
+
 <?php
 
 $deck = array();
@@ -117,29 +118,29 @@ function drawGame() {
 	global $people;
 
 	$k = 0;
-	echo "<table border = 1 >";
-	echo "<tr class='top'>";
-	echo "<td>";
+	echo "<table border = 1>";
+	echo "<tr>";
+	echo "<td id = 'colTitle'>";
 	echo "People";
 	echo "</td>";
 	for ($i = 0; $i < 6; $i++) {
 
-		echo "<td>";
+		echo "<td id = 'colTitle'>";
 		$temp = "Cards " . ($i+1);
 		echo $temp;
 		echo "</td>";
 
 	}
-	echo "<td>";
+	echo "<td id = 'colTitle'>";
 	echo "Points";
 	echo "</td>";
-	echo "<td>";
-	echo "winner?";
+	echo "<td id = 'colTitle'>";
+	echo "Winner?";
 	echo "</td>";
 	echo "</tr>";
 	for ($i = 0; $i < 4; $i++)//prints the person, hands up to the zero, winner quote
 	{
-		echo "<tr class='rest'>";
+		echo "<tr>";
 
 		echo "<td>";
 		//echo "People";
@@ -160,7 +161,7 @@ function drawGame() {
 			if($j < 6)
 			{
 				echo "<td>";
-				echo "<img src= 'cards/card_back.png'/>" ;
+		
 				echo "</td>";
 			}
 
@@ -190,30 +191,32 @@ function drawGame() {
 		<title>Lab 3: SilverJack</title>
 
 		<style>
-			@import url(styles.css);
+			@import url(css/styles.css);
 		</style>
+		
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
 
 	</head>
 
-	<body >
-		<h1 > SilverJack</h1>
+	<body>
+		<h1>SilverJack</h1>
 
-		<div id="wrapper" >
+		<div id="wrapper">
 			<?php
-			doAll();
-			
+				doAll();
 			?>
 		</div>
 
-		<footer >
+		<footer>
 			<hr>
 			<br />
-			&copy; Uriel, 2015
+			&copy; Uriel, Anthony, HyunSang, Daniel 2015
 			<br />
 			<img src="../../../img/csumb-logo.png" alt="California State University Monterey Bay Logo" />
 		</footer>
 
 	</body>
 </html>
+
 
 

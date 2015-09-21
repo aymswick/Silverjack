@@ -1,6 +1,3 @@
-body {
-	background: rgba(44, 62, 80,0.8);
-}
 
 .card {
 	background: black;
@@ -18,11 +15,11 @@ table{
 }
 .top{
 	background:blue;
-	color: red;
+	color: white;
 }
 .rest{
-	background:blue;
-	color: red;
+	background: rgba(44, 62, 80,0.8);	
+	color: white;
 }
 #wrapper {
 

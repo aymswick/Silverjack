@@ -1,0 +1,39 @@
+body {
+	background: rgba(200, 200, 200, .5);
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.card {
+	background: black;
+	border: 1px solid black;
+}
+footer {
+	text-align: center;
+	font-size: 1.0em;
+	color: black;
+}
+table{
+	margin:5px auto; width:50%;
+	background: black;
+}
+
+td {
+	background: rgba(52, 152, 219, .8);
+	text-align: center;
+}
+
+#colTitle {
+	background: rgba(46, 204, 113, 1);
+}
+
+#wrapper {
+	width: 900px;
+	margin: 0 auto;
+}
+h1{
+	color: black;
+	font-size: 3.2em;
+	text-align: center;
+}
+
